@@ -5,7 +5,6 @@ import Hero from './Component/Hero'
 import Destination from './Component/Destination'
 import Popular from './Component/Popular'
 import About from './Component/About'
-import Blog from './Component/Blog'
 import Footer from './Component/Footer'
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
      <Destination></Destination>
      <Popular></Popular>
      <About></About>
-     <Blog></Blog>
+     {/* <Blog></Blog> */}
      <Footer></Footer>
     </>
   )

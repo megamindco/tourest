@@ -1,157 +1,102 @@
-import React from 'react'
-import popular1 from '../assets/images/popular-1.jpg'
-import popular2 from '../assets/images/popular-2.jpg'
-import popular3 from '../assets/images/popular-3.jpg'
+"use client";
+import { FaClock, FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Popular = () => {
-  return (
-    <div>
-
-      <section className="section popular">
-        <div className="container">
-
-          <p className="section-subtitle">Featured Tours</p>
-
-          <h2 className="h2 section-title">Most Popular Tours</h2>
-
-          <ul className="popular-list">
-
-            <li>
-              <div className="popular-card">
-
-                <figure className="card-banner">
-                  <a href="#">
-                    <img src={popular1} width="740" height="518" loading="lazy"
-                      alt="Kuala Lumpur, Malaysia" className="img-cover"/>
-                  </a>
-
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time dateTime="P12D">12 Days</time>
-                  </span>
-                </figure>
-
-                <div className="card-content">
-
-                  <div className="card-wrapper">
-                    <div className="card-price">From $50.00</div>
-
-                    <div className="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
-
-                      <data value="2">(2)</data>
-                    </div>
-                  </div>
-
-                  <h3 className="card-title">
-                    <a href="#">A good traveler has no fixed plans and is not intent on arriving.</a>
-                  </h3>
-
-                  <address className="card-location">Kuala Lumpur, Malaysia</address>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div className="popular-card">
-
-                <figure className="card-banner">
-                  <a href="#">
-                    <img src={popular2} width="740" height="518" loading="lazy"
-                      alt="Kuala Lumpur, Malaysia" className="img-cover"/>
-                  </a>
-
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time dateTime="P12D">12 Days</time>
-                  </span>
-                </figure>
-
-                <div className="card-content">
-
-                  <div className="card-wrapper">
-                    <div className="card-price">From $50.00</div>
-
-                    <div className="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
-
-                      <data value="2">(2)</data>
-                    </div>
-                  </div>
-
-                  <h3 className="card-title">
-                    <a href="#">A good traveler has no fixed plans and is not intent on arriving.</a>
-                  </h3>
-
-                  <address className="card-location">Kuala Lumpur, Malaysia</address>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div className="popular-card">
-
-                <figure className="card-banner">
-                  <a href="#">
-                    <img src={popular3} width="740" height="518" loading="lazy"
-                      alt="Kuala Lumpur, Malaysia" className="img-cover"/>
-                  </a>
-
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
-
-                    <time dateTime="P12D">12 Days</time>
-                  </span>
-                </figure>
-
-                <div className="card-content">
-
-                  <div className="card-wrapper">
-                    <div className="card-price">From $50.00</div>
-
-                    <div className="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
-
-                      <data value="2">(2)</data>
-                    </div>
-                  </div>
-
-                  <h3 className="card-title">
-                    <a href="#">A good traveler has no fixed plans and is not intent on arriving.</a>
-                  </h3>
-
-                  <address className="card-location">Kuala Lumpur, Malaysia</address>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
+const TourCard = ({
+  image,
+  duration,
+  price,
+  rating,
+  location,
+  description,
+}) => (
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
+    <div className="relative">
+      <img alt={description} className="w-full h-48 object-cover" src={image} />
+      <div className="absolute top-2 left-2 bg-yellow-500 text-white text-sm font-bold py-1 px-2 rounded">
+        <FaClock /> {duration}
+      </div>
     </div>
-  )
-}
+    <div className="p-4">
+      <div className="flex items-center justify-between mb-2">
+        <span className="bg-teal-500 text-white text-xs font-bold py-1 px-2 rounded">
+          From {price}
+        </span>
+        <div className="flex items-center">
+          <div className="flex text-yellow-500">
+            {[...Array(5)].map((_, index) => {
+              const fullStar = index < Math.floor(rating); // full stars
+              const halfStar = index === Math.floor(rating) && rating % 1 !== 0; // half star
+              return (
+                <span key={index}>
+                  {fullStar && <FaStar />}
+                  {halfStar && <FaStarHalfAlt />}
+                  {!fullStar && !halfStar && (
+                    <FaStar className="text-gray-400" />
+                  )}
+                </span>
+              );
+            })}
+          </div>
+          <span className="text-gray-600 text-sm ml-1">({rating})</span>
+        </div>
+      </div>
+      <p className="text-gray-800 font-semibold mb-2">{description}</p>
+      <p className="text-gray-600 text-sm">{location}</p>
+    </div>
+  </div>
+);
 
-export default Popular
+const PopularTours = () => {
+  const tours = [
+    {
+      image:
+        "https://storage.googleapis.com/a1aa/image/qOZg4cuCR1kLeRSazbpo6ODFaZ4KlgrcGCHEY7dsoPk.jpg",
+      duration: "12 Days",
+      price: "$50.00",
+      rating: 4.5,
+      location: "Kuala Lumpur, Malaysia",
+      description:
+        "A good traveler has no fixed plans and is not intent on arriving.",
+    },
+    {
+      image:
+        "https://storage.googleapis.com/a1aa/image/2ppLkc_tiX1ysj7aNhM4l7-W1r8Vj4t-mVKFousG86E.jpg",
+      duration: "12 Days",
+      price: "$50.00",
+      rating: 4.5,
+      location: "Kuala Lumpur, Malaysia",
+      description:
+        "A good traveler has no fixed plans and is not intent on arriving.",
+    },
+    {
+      image:
+        "https://storage.googleapis.com/a1aa/image/cFGdZ2tGHcQH94nvra8g9-xcGbpSpQsgJiHgz3D6sWQ.jpg",
+      duration: "12 Days",
+      price: "$50.00",
+      rating: 4.5,
+      location: "Kuala Lumpur, Malaysia",
+      description:
+        "A good traveler has no fixed plans and is not intent on arriving.",
+    },
+  ];
+
+  return (
+    <div className="container mx-auto px-4 py-8 md:px-25">
+      <div className="text-center mb-8">
+        <h2 className="text-yellow-300 text-4xl font-cursive italic">
+          Featured Tours
+        </h2>
+        <h3 className="text-3xl font-bold text-gray-800 mt-2">
+          Most Popular Tours
+        </h3>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tours.map((tour, index) => (
+          <TourCard key={index} {...tour} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default PopularTours;

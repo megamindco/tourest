@@ -7,63 +7,63 @@ import authorAvatar from '../assets/images/author-avatar.png'
 const Blog = () => {
   return (
     <div>
-      <section className="section blog">
-        <div className="container">
+      <section className="pb-24">
+        <div className="container mx-auto px-4">
 
-          <p className="section-subtitle">From The Blog Post</p>
+          <p className="text-center text-mikado-yellow font-comforter-brush text-4xl mb-2.5">From The Blog Post</p>
 
-          <h2 className="h2 section-title">Latest News & Articles</h2>
+          <h2 className="text-center text-jet text-4xl font-abril-fatface mb-12.5">Latest News & Articles</h2>
 
-          <ul className="blog-list">
+          <ul className="grid gap-7.5">
 
             <li>
-              <div className="blog-card">
+              <div className="shadow-lg rounded-lg overflow-hidden">
 
-                <figure className="card-banner">
+                <figure className="relative bg-silver-chalice">
 
                   <a href="#">
                     <img src={popular1} width="740" height="518" loading="lazy"
-                      alt="A good traveler has no fixed plans and is not intent on arriving." className="img-cover" />
+                      alt="A good traveler has no fixed plans and is not intent on arriving." className="w-full h-full object-cover" />
                   </a>
 
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
+                  <span className="absolute top-2.5 left-2.5 bg-mikado-yellow text-white-1 p-3.5 rounded-lg">
+                    <ion-icon name="time-outline" className="text-lg mx-auto"></ion-icon>
 
-                    <time dateTime="12-04">04 Dec</time>
+                    <time dateTime="12-04" className="font-bold">04 Dec</time>
                   </span>
 
                 </figure>
 
-                <div className="card-content">
+                <div className="p-7.5">
 
-                  <div className="card-wrapper">
+                  <div className="flex justify-between items-center gap-5">
 
-                    <div className="author-wrapper">
-                      <figure className="author-avatar">
+                    <div className="flex items-center gap-3.75">
+                      <figure className="w-7.5 h-7.5">
                         <img src={authorAvatar} width="30" height="30" alt="Jony bristow" />
                       </figure>
 
                       <div>
-                        <a href="#" className="author-name">Jony bristow</a>
+                        <a href="#" className="text-granite-gray font-medium">Jony bristow</a>
 
-                        <p className="author-title">Admin</p>
+                        <p className="text-spanish-gray text-sm">Admin</p>
                       </div>
                     </div>
 
-                    <time className="publish-time" dateTime="10:30">10:30 AM</time>
+                    <time className="text-spanish-gray text-sm" dateTime="10:30">10:30 AM</time>
 
                   </div>
 
-                  <h3 className="card-title">
-                    <a href="#">
+                  <h3 className="text-granite-gray text-2xl my-5">
+                    <a href="#" className="hover:text-viridian-green">
                       A good traveler has no fixed plans and is not intent on arriving.
                     </a>
                   </h3>
 
-                  <a href="#" className="btn-link">
+                  <a href="#" className="text-viridian-green font-bold flex justify-end items-center gap-1.25 hover:text-oxford-blue">
                     <span>Read More</span>
 
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true" className="text-lg"></ion-icon>
                   </a>
 
                 </div>
@@ -72,53 +72,53 @@ const Blog = () => {
             </li>
 
             <li>
-              <div className="blog-card">
+              <div className="shadow-lg rounded-lg overflow-hidden">
 
-                <figure className="card-banner">
+                <figure className="relative bg-silver-chalice">
 
                   <a href="#">
                     <img src={blog2} width="740" height="518" loading="lazy"
-                      alt="A good traveler has no fixed plans and is not intent on arriving." className="img-cover" />
+                      alt="A good traveler has no fixed plans and is not intent on arriving." className="w-full h-full object-cover" />
                   </a>
 
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
+                  <span className="absolute top-2.5 left-2.5 bg-mikado-yellow text-white-1 p-3.5 rounded-lg">
+                    <ion-icon name="time-outline" className="text-lg mx-auto"></ion-icon>
 
-                    <time dateTime="12-04">04 Dec</time>
+                    <time dateTime="12-04" className="font-bold">04 Dec</time>
                   </span>
 
                 </figure>
 
-                <div className="card-content">
+                <div className="p-7.5">
 
-                  <div className="card-wrapper">
+                  <div className="flex justify-between items-center gap-5">
 
-                    <div className="author-wrapper">
-                      <figure className="author-avatar">
+                    <div className="flex items-center gap-3.75">
+                      <figure className="w-7.5 h-7.5">
                         <img src={authorAvatar} width="30" height="30" alt="Jony bristow" />
                       </figure>
 
                       <div>
-                        <a href="#" className="author-name">Jony bristow</a>
+                        <a href="#" className="text-granite-gray font-medium">Jony bristow</a>
 
-                        <p className="author-title">Admin</p>
+                        <p className="text-spanish-gray text-sm">Admin</p>
                       </div>
                     </div>
 
-                    <time className="publish-time" dateTime="10:30">10:30 AM</time>
+                    <time className="text-spanish-gray text-sm" dateTime="10:30">10:30 AM</time>
 
                   </div>
 
-                  <h3 className="card-title">
-                    <a href="#">
+                  <h3 className="text-granite-gray text-2xl my-5">
+                    <a href="#" className="hover:text-viridian-green">
                       A good traveler has no fixed plans and is not intent on arriving.
                     </a>
                   </h3>
 
-                  <a href="#" className="btn-link">
+                  <a href="#" className="text-viridian-green font-bold flex justify-end items-center gap-1.25 hover:text-oxford-blue">
                     <span>Read More</span>
 
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true" className="text-lg"></ion-icon>
                   </a>
 
                 </div>
@@ -127,53 +127,53 @@ const Blog = () => {
             </li>
 
             <li>
-              <div className="blog-card">
+              <div className="shadow-lg rounded-lg overflow-hidden">
 
-                <figure className="card-banner">
+                <figure className="relative bg-silver-chalice">
 
                   <a href="#">
                     <img src={blog3} width="740" height="518" loading="lazy"
-                      alt="A good traveler has no fixed plans and is not intent on arriving." className="img-cover" />
+                      alt="A good traveler has no fixed plans and is not intent on arriving." className="w-full h-full object-cover" />
                   </a>
 
-                  <span className="card-badge">
-                    <ion-icon name="time-outline"></ion-icon>
+                  <span className="absolute top-2.5 left-2.5 bg-mikado-yellow text-white-1 p-3.5 rounded-lg">
+                    <ion-icon name="time-outline" className="text-lg mx-auto"></ion-icon>
 
-                    <time dateTime="12-04">04 Dec</time>
+                    <time dateTime="12-04" className="font-bold">04 Dec</time>
                   </span>
 
                 </figure>
 
-                <div className="card-content">
+                <div className="p-7.5">
 
-                  <div className="card-wrapper">
+                  <div className="flex justify-between items-center gap-5">
 
-                    <div className="author-wrapper">
-                      <figure className="author-avatar">
+                    <div className="flex items-center gap-3.75">
+                      <figure className="w-7.5 h-7.5">
                         <img src={authorAvatar} width="30" height="30" alt="Jony bristow" />
                       </figure>
 
                       <div>
-                        <a href="#" className="author-name">Jony bristow</a>
+                        <a href="#" className="text-granite-gray font-medium">Jony bristow</a>
 
-                        <p className="author-title">Admin</p>
+                        <p className="text-spanish-gray text-sm">Admin</p>
                       </div>
                     </div>
 
-                    <time className="publish-time" dateTime="10:30">10:30 AM</time>
+                    <time className="text-spanish-gray text-sm" dateTime="10:30">10:30 AM</time>
 
                   </div>
 
-                  <h3 className="card-title">
-                    <a href="#">
+                  <h3 className="text-granite-gray text-2xl my-5">
+                    <a href="#" className="hover:text-viridian-green">
                       A good traveler has no fixed plans and is not intent on arriving.
                     </a>
                   </h3>
 
-                  <a href="#" className="btn-link">
+                  <a href="#" className="text-viridian-green font-bold flex justify-end items-center gap-1.25 hover:text-oxford-blue">
                     <span>Read More</span>
 
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true" className="text-lg"></ion-icon>
                   </a>
 
                 </div>

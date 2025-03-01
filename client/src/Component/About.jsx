@@ -4,65 +4,65 @@ import aboutBanner from '../assets/images/about-banner.png'
 const About = () => {
   return (
     <div>
-      <section className="section about">
-        <div className="container">
+      <section className="py-10 w-full md:px-25">
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-7.5 items-center">
 
-          <div className="about-content">
+          <div className="mb-12.5 lg:mb-0">
 
-            <p className="section-subtitle">About Us</p>
+            <p className="text-mikado-yellow font-comforter-brush text-4xl mb-6 text-yellow-300">About Us</p>
 
-            <h2 className="h2 section-title">Explore all tour of the world with us.</h2>
+            <h2 className="text-jet text-4xl font-abril-fatface font-semibold mb-5">Explore all tour of the world with us.</h2>
 
-            <p className="about-text">
+            <p className="text-battleship-gray text-lg leading-7 mb-7.5">
               Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
               randomised words
               which don't look even slightly believable.
             </p>
 
-            <ul className="about-list">
+            <ul className="grid gap-5 mb-10">
 
-              <li className="about-item">
+              <li className="flex items-start gap-3.75">
 
-                <div className="about-item-icon">
-                  <ion-icon name="compass"></ion-icon>
+                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
+                  <ion-icon name="compass" className="absolute text-3xl"></ion-icon>
                 </div>
 
-                <div className="about-item-content">
-                  <h3 className="h3 about-item-title">Tour guide</h3>
+                <div>
+                  <h3 className="text-granite-gray font-semibold mb-1.25">Tour guide</h3>
 
-                  <p className="about-item-text">
+                  <p className="text-battleship-gray text-lg leading-7">
                     Lorem Ipsum available, but the majority have suffered alteration in some.
                   </p>
                 </div>
 
               </li>
 
-              <li className="about-item">
+              <li className="flex items-start gap-3.75">
 
-                <div className="about-item-icon">
-                  <ion-icon name="briefcase"></ion-icon>
+                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
+                  <ion-icon name="briefcase" className="absolute text-3xl"></ion-icon>
                 </div>
 
-                <div className="about-item-content">
-                  <h3 className="h3 about-item-title">Friendly price</h3>
+                <div>
+                  <h3 className="text-granite-gray font-semibold mb-1.25">Friendly price</h3>
 
-                  <p className="about-item-text">
+                  <p className="text-battleship-gray text-lg leading-7">
                     Lorem Ipsum available, but the majority have suffered alteration in some.
                   </p>
                 </div>
 
               </li>
 
-              <li className="about-item">
+              <li className="flex items-start gap-3.75">
 
-                <div className="about-item-icon">
-                  <ion-icon name="umbrella"></ion-icon>
+                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
+                  <ion-icon name="umbrella" className="absolute text-white text-3xl"></ion-icon>
                 </div>
 
-                <div className="about-item-content">
-                  <h3 className="h3 about-item-title">Reliable tour</h3>
+                <div>
+                  <h3 className="text-granite-gray font-semibold mb-1.25">Reliable tour</h3>
 
-                  <p className="about-item-text">
+                  <p className="text-battleship-gray text-lg leading-7">
                     Lorem Ipsum available, but the majority have suffered alteration in some.
                   </p>
                 </div>
@@ -71,13 +71,17 @@ const About = () => {
 
             </ul>
 
-            <a href="#" className="btn btn-primary">Booking Now</a>
+            <div className='mb-5'>
+              <a href="#" className="bg-[hsl(180,98%,31%)] text-white font-bold py-2.5 px-6 border-2 border-[hsl(180,98%,31%)] rounded-lg hover:bg-transparent hover:text-[hsl(180,98%,31%)] ">Booking Now</a>
+            </div>
+
 
           </div>
 
-          <figure className="about-banner">
-            <img src={aboutBanner} width="756" height="842" loading="lazy" alt="" className="w-100" />
+          <figure className="w-full">
+            <img src={aboutBanner} loading="lazy" alt="" className="w-full h-147" />
           </figure>
+
 
         </div>
       </section>
