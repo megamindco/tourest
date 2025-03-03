@@ -77,7 +77,7 @@ const TourCard = ({
           href="#"
           className="bg-[hsl(180,98%,31%)] text-white font-bold py-2 px-4 rounded-lg hover:bg-[hsl(180,98%,40%)] transition-colors duration-300"
         >
-          Enquiry Now
+          Enquire Now
         </a>
         <a
           href="#"
@@ -92,44 +92,38 @@ const TourCard = ({
 
 const Popular = () => {
   const tours = [
-    {
-      image:
-        "https://storage.googleapis.com/a1aa/image/qOZg4cuCR1kLeRSazbpo6ODFaZ4KlgrcGCHEY7dsoPk.jpg",
-      hoverImage: img1, // Add hover image
-      duration: "12 Days",
-      rating: 4.5,
-      location: "Kuala Lumpur, Malaysia",
-      description:
-        "A good traveler has no fixed plans and is not intent on arriving.",
-    },
-    {
-      image:
-        "https://storage.googleapis.com/a1aa/image/2ppLkc_tiX1ysj7aNhM4l7-W1r8Vj4t-mVKFousG86E.jpg",
-      hoverImage: img2, // Add hover image
-      duration: "12 Days",
-      rating: 4.5,
-      location: "Kuala Lumpur, Malaysia",
-      description:
-        "A good traveler has no fixed plans and is not intent on arriving.",
-    },
-    {
-      image:
-        "https://storage.googleapis.com/a1aa/image/cFGdZ2tGHcQH94nvra8g9-xcGbpSpQsgJiHgz3D6sWQ.jpg",
-      hoverImage: img3, // Add hover image
-      duration: "12 Days",
-      rating: 4.5,
-      location: "Kuala Lumpur, Malaysia",
-      description:
-        "A good traveler has no fixed plans and is not intent on arriving.",
-    },
+      {
+        "image": "https://cdn1.tripoto.com/media/filter/tst/img/1429685/Image/1581687460_4manali.jpg",
+        "hoverImage": img1,
+        "duration": "4 Days",
+        "rating": 4.7,
+        "location": "Manali, India",
+        "description": "Nestled in the heart of the Himalayas, Manali offers snow-capped peaks, serene valleys, and thrilling adventures. Experience the charm of Solang Valley, the tranquility of Hadimba Temple, and the thrill of Rohtang Pass."
+      },
+      {
+        "image": "https://tfipost.com/wp-content/uploads/2023/03/Must-Visit-Beautiful-places-in-Shimla-1-750x422.jpg",
+        "hoverImage": img2,
+        "duration": "3 Days",
+        "rating": 4.6,
+        "location": "Shimla, India",
+        "description": "The 'Queen of Hills' invites you to explore colonial architecture, lush greenery, and misty mountains. Walk along the Mall Road, visit Kufri’s snowy landscapes, and soak in the beauty of this timeless retreat."
+      },
+      {
+        "image": "https://a.cdn-hotels.com/gdcs/production53/d1468/128397b0-57d2-4183-b9fb-bf6a5254d19c.jpg",
+        "hoverImage": img3,
+        "duration": "12 Days",
+        "rating": 4.8,
+        "location": "Malaysia & Singapore",
+        "description": "A perfect blend of modern marvels and cultural heritage! Explore Kuala Lumpur’s iconic skyline, indulge in Singapore’s vibrant nightlife, and discover exotic islands, thrilling theme parks, and world-class shopping."
+      }    
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 md:px-25">
+    <div className="container mx-auto px-4 py-8 md:px-25 bg-gray-100 mt-5 mb-5">
       <div className="text-center mb-8">
         <h2
-          style={{ fontFamily: 'Merienda, cursive' }}
-          className="text-yellow-300 text-3xl font-cursive italic"
+          style={{ fontFamily:'Great Vibes, cursive' }}
+          className="text-yellow-300 text-4xl font-cursive italic"
         >
           Featured Tours
         </h2>

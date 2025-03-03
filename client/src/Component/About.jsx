@@ -1,100 +1,80 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import aboutBanner from '../assets/images/about-banner.png';
 
 const About = () => {
   return (
-    <div>
-      <section className="py-10 w-full md:px-25">
-        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-7.5 items-center">
-          <div className="mb-12.5 lg:mb-0">
-            {/* Section Subtitle */}
-            <p
-              style={{ fontFamily: 'Merienda, cursive' }}
-              className="text-mikado-yellow font-comforter-brush text-3xl mb-6 text-yellow-300"
-            >
-              About Us
-            </p>
-
-            {/* Section Title */}
-            <h2 className="text-jet text-4xl font-abril-fatface font-semibold mb-5">
-              Explore all tours of the world with us.
-            </h2>
-
-            {/* Main Content */}
-            <p className="text-battleship-gray text-lg leading-7 mb-7.5">
-              Want a break from the hustle and bustle of everyday life? Travel 2 World takes pride in being the most experienced in leisure travel and vacation planning. We help you explore the bright side of life, whether it's domestic or international travel. Our itineraries are designed to make your holidays memorable, hassle-free, and economical.
-            </p>
-
-            <p className="text-battleship-gray text-lg leading-7 mb-7.5">
-              <b>Travel 2 World is a registered tour operator of Pushpa Gujral Science City, Kapurthala, Punjab, India.</b> We specialize in organizing school, college, and institutional group excursions across India and around the globe. Our packages are tailored to suit every type of tourist, from adventurers and honeymoon couples to business travelers and educational groups.
-            </p>
-
-            <p className="text-battleship-gray text-lg leading-7 mb-7.5">
-              Our packages are based on themes like adventure, nature and wildlife, beaches, hill stations, culture, pilgrimage, and art & architecture. Whether it's the historic forts of Rajasthan, the beach resorts of Goa, or the scenic beauty of Shimla, Kullu, Manali, Dalhousie, Palampur, and Dharamshala, we ensure the best hospitality for every customer.
-            </p>
-
-            {/* Key Features */}
-            <ul className="grid gap-5 mb-10">
-              <li className="flex items-start gap-3.75">
-                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
-                  <ion-icon name="compass" className="absolute text-3xl"></ion-icon>
-                </div>
-                <div>
-                  <h3 className="text-granite-gray font-semibold mb-1.25">Experienced Tour Guides</h3>
-                  <p className="text-battleship-gray text-lg leading-7">
-                    Our team of experienced guides ensures a smooth and enriching travel experience.
-                  </p>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3.75">
-                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
-                  <ion-icon name="briefcase" className="absolute text-3xl"></ion-icon>
-                </div>
-                <div>
-                  <h3 className="text-granite-gray font-semibold mb-1.25">Affordable Packages</h3>
-                  <p className="text-battleship-gray text-lg leading-7">
-                    We offer well-designed packages at friendly prices to suit every budget.
-                  </p>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-3.75">
-                <div className="relative flex items-center justify-center bg-[hsl(180,98%,31%)] text-white text-2xl p-4 border h-12 w-12 rounded-full mt-1.25">
-                  <ion-icon name="umbrella" className="absolute text-white text-3xl"></ion-icon>
-                </div>
-                <div>
-                  <h3 className="text-granite-gray font-semibold mb-1.25">Reliable Services</h3>
-                  <p className="text-battleship-gray text-lg leading-7">
-                    From planning to execution, we ensure a seamless and reliable travel experience.
-                  </p>
-                </div>
-              </li>
-            </ul>
-
-            {/* Call-to-Action Button */}
-            <div className="mb-5">
-              <a
-                href="#"
-                className="bg-[hsl(180,98%,31%)] text-white font-bold py-2.5 px-6 border-2 border-[hsl(180,98%,31%)] rounded-lg hover:bg-transparent hover:text-[hsl(180,98%,31%)] transition-colors duration-300"
+    <section className="py-10 w-full md:px-25 bg-gray-100">
+      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* Text Content */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.6 }}
+          className="mb-12.5 lg:mb-0"
+        >
+          <p className="text-mikado-yellow text-3xl mb-4 font-semibold" style={{ fontFamily: 'Merienda, cursive' }}>
+            About Us
+          </p>
+          <h2 className="text-jet text-4xl font-bold mb-5">
+            Explore all tours of the world with us.
+          </h2>
+          <p className="text-gray-600 text-lg leading-7 mb-6">
+            Want a break from the hustle and bustle of everyday life? Travel 2 World is your trusted companion for leisure travel and vacation planning. Let’s make your journey smooth, enjoyable, and memorable!
+          </p>
+          <p className="text-gray-600 text-lg leading-7 mb-6">
+            <b>Registered tour operator of Pushpa Gujral Science City, Kapurthala.</b> We offer customized travel experiences, catering to adventurers, honeymooners, business travelers, and educational groups.
+          </p>
+          <ul className="grid gap-6 mb-10">
+            {[
+              { icon: 'compass', title: 'Experienced Guides', text: 'Our expert guides ensure an enriching experience.' },
+              { icon: 'briefcase', title: 'Affordable Packages', text: 'We provide well-crafted trips for every budget.' },
+              { icon: 'umbrella', title: 'Reliable Services', text: 'Seamless and hassle-free travel planning.' },
+            ].map((feature, index) => (
+              <motion.li 
+                key={index} 
+                initial={{ opacity: 0, x: -20 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                transition={{ delay: index * 0.2 }}
+                className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition"
               >
-                Book Now
-              </a>
-            </div>
-          </div>
-
-          {/* Banner Image */}
-          <figure className="w-full">
-            <img
-              src={aboutBanner}
-              loading="lazy"
-              alt="About Us Banner"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </figure>
-        </div>
-      </section>
-    </div>
+                <div className="flex items-center justify-center bg-teal-500 text-white text-2xl p-4 h-12 w-12 rounded-full">
+                  <ion-icon name={feature.icon}></ion-icon>
+                </div>
+                <div>
+                  <h3 className="text-gray-800 font-semibold mb-1">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.text}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+          <motion.a 
+            href="#" 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition"
+          >
+            Book Now
+          </motion.a>
+        </motion.div>
+        
+        {/* Image Banner */}
+        <motion.figure 
+          initial={{ opacity: 0, x: 50 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.6 }}
+          className="w-full relative overflow-hidden rounded-lg shadow-lg"
+        >
+          <motion.img 
+            src={aboutBanner} 
+            alt="About Us" 
+            className="w-full h-full object-cover" 
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.figure>
+      </div>
+    </section>
   );
 };
 

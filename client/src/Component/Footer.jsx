@@ -1,6 +1,6 @@
 import React from 'react';
 import footerBg from '../assets/images/footer-bg.png';
-
+let year = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer className="bg-cover bg-[hsl(222,46%,17%)] bg-center text-[hsl(0,0%,80%)] py-10 md:px-20" style={{ backgroundImage: `url(${footerBg})` }}>
@@ -21,9 +21,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Travel</a></li>
               <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Lifestyle</a></li>
-              <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Fashion</a></li>
+              <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Hotels</a></li>
               <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Education</a></li>
-              <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Food & Drink</a></li>
+              <li><a href="#" className="hover:text-[hsl(0,0%,100%)]">Devotion</a></li>
             </ul>
           </div>
           <div>
@@ -46,8 +46,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center text-[hsl(0,0%,61%)] text-sm border-t border-[hsl(0,0%,53%)] pt-4">
-          <a href="#" className="text-[hsl(0,0%,100%)] text-lg font-bold">Tourest</a>
-          <p>&copy; 2022 <a href="#" className="text-[hsl(0,0%,100%)] hover:underline">codewithsadee</a>. All Rights Reserved</p>
+          <a href="#" className="text-[hsl(0,0%,100%)] text-lg font-bold">Travel2World</a>
+          <p>&copy; {year} <a href="#" className="text-[hsl(0,0%,100%)] hover:underline">Travel2World.in</a>. All Rights Reserved</p>
           <div className="flex space-x-4 mt-2 md:mt-0">
             <a href="#" className="text-[hsl(0,0%,100%)] hover:text-[hsl(0,0%,80%)]"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="#" className="text-[hsl(0,0%,100%)] hover:text-[hsl(0,0%,80%)]"><ion-icon name="logo-twitter"></ion-icon></a>

@@ -7,53 +7,53 @@ import logo from '../assets/images/Full_logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDestinationsOpen, setIsDestinationsOpen] = useState(false); // State for destinations dropdown
-  const [isToursOpen, setIsToursOpen] = useState(false); // State for tours dropdown
+  const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
+  const [isToursOpen, setIsToursOpen] = useState(false);
 
-  // Destination data
+  // Destination data with slugs
   const destinations = {
     India: [
-      "Gujarat",
-      "Karnataka",
-      "Leh Ladakh",
-      "Manipur",
-      "Arunachal",
-      "Meghalaya",
-      "Odisha",
-      "Jharkhand",
-      "Tripura",
-      "Nagaland",
-      "India Destination",
-      "All Destination",
+      { name: "Gujarat", slug: "/destinations/india/gujarat" },
+      { name: "Karnataka", slug: "/destinations/india/karnataka" },
+      { name: "Leh Ladakh", slug: "/destinations/india/leh-ladakh" },
+      { name: "Manipur", slug: "/destinations/india/manipur" },
+      { name: "Arunachal", slug: "/destinations/india/arunachal" },
+      { name: "Meghalaya", slug: "/destinations/india/meghalaya" },
+      { name: "Odisha", slug: "/destinations/india/odisha" },
+      { name: "Jharkhand", slug: "/destinations/india/jharkhand" },
+      { name: "Tripura", slug: "/destinations/india/tripura" },
+      { name: "Nagaland", slug: "/destinations/india/nagaland" },
+      { name: "India Destination", slug: "/destinations/india" },
+      { name: "All Destination", slug: "/destinations" },
     ],
     Asia: [
-      "Vietnam",
-      "Nepal",
-      "Mauritius",
-      "Bhutan",
-      "Bali",
-      "Malaysia",
-      "Azerbaijan",
-      "Hong Kong",
-      "Dubai",
-      "Maldives",
-      "International Destination",
+      { name: "Vietnam", slug: "/destinations/asia/vietnam" },
+      { name: "Nepal", slug: "/destinations/asia/nepal" },
+      { name: "Mauritius", slug: "/destinations/asia/mauritius" },
+      { name: "Bhutan", slug: "/destinations/asia/bhutan" },
+      { name: "Bali", slug: "/destinations/asia/bali" },
+      { name: "Malaysia", slug: "/destinations/asia/malaysia" },
+      { name: "Azerbaijan", slug: "/destinations/asia/azerbaijan" },
+      { name: "Hong Kong", slug: "/destinations/asia/hong-kong" },
+      { name: "Dubai", slug: "/destinations/asia/dubai" },
+      { name: "Maldives", slug: "/destinations/asia/maldives" },
+      { name: "International Destination", slug: "/destinations/international" },
     ],
     Europe: [
-      // Add European destinations here
+      // Add European destinations here with slugs
     ],
   };
 
-  // Tours data
+  // Tours data with slugs
   const tours = [
-    "Family Trip",
-    "Honeymoon Trip",
-    "Winter Holidays",
-    "Wildlife",
-    "Golden Triangle Tour",
-    "Hill Station",
-    "Adventure Trip",
-    "Trekking Tours",
+    { name: "Family Trip", slug: "/tours/family-trip" },
+    { name: "Honeymoon Trip", slug: "/tours/honeymoon-trip" },
+    { name: "Winter Holidays", slug: "/tours/winter-holidays" },
+    { name: "Wildlife", slug: "/tours/wildlife" },
+    { name: "Golden Triangle Tour", slug: "/tours/golden-triangle" },
+    { name: "Hill Station", slug: "/tours/hill-station" },
+    { name: "Adventure Trip", slug: "/tours/adventure" },
+    { name: "Trekking Tours", slug: "/tours/trekking" },
   ];
 
   return (
@@ -61,7 +61,9 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <motion.div
-          className="w-96" // Very large logo
+          className="w-54 lg:w-" 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <img
             src={logo}
@@ -81,7 +83,6 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               {item}
-              {/* Underline effect on hover */}
               <span className="absolute left-0 bottom-0 h-0.5 bg-cyan-200 w-0 group-hover:w-full transition-all duration-300"></span>
             </motion.a>
           ))}
@@ -100,7 +101,6 @@ const Navbar = () => {
               <FaChevronDown className={`transition-transform duration-300 ${isToursOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {/* Tours Dropdown Menu */}
             <AnimatePresence>
               {isToursOpen && (
                 <motion.div
@@ -111,13 +111,13 @@ const Navbar = () => {
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-50 p-4"
                 >
                   <ul className="space-y-2">
-                    {tours.map((tour) => (
-                      <li key={tour}>
+                    {tours.map(({ name, slug }) => (
+                      <li key={name}>
                         <a
-                          href="#"
+                          href={slug}
                           className="block text-gray-700 hover:text-teal-600 transition-colors duration-300"
                         >
-                          {tour}
+                          {name}
                         </a>
                       </li>
                     ))}
@@ -141,7 +141,6 @@ const Navbar = () => {
               <FaChevronDown className={`transition-transform duration-300 ${isDestinationsOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {/* Destinations Dropdown Menu */}
             <AnimatePresence>
               {isDestinationsOpen && (
                 <motion.div
@@ -156,13 +155,13 @@ const Navbar = () => {
                     <div>
                       <h3 className="text-lg font-bold text-teal-700 mb-4">India</h3>
                       <ul className="space-y-2">
-                        {destinations.India.map((destination) => (
-                          <li key={destination}>
+                        {destinations.India.map(({ name, slug }) => (
+                          <li key={name}>
                             <a
-                              href="#"
+                              href={slug}
                               className="block text-gray-700 hover:text-teal-600 transition-colors duration-300"
                             >
-                              {destination}
+                              {name}
                             </a>
                           </li>
                         ))}
@@ -173,42 +172,28 @@ const Navbar = () => {
                     <div>
                       <h3 className="text-lg font-bold text-teal-700 mb-4">Asia</h3>
                       <ul className="space-y-2">
-                        {destinations.Asia.map((destination) => (
-                          <li key={destination}>
+                        {destinations.Asia.map(({ name, slug }) => (
+                          <li key={name}>
                             <a
-                              href="#"
+                              href={slug}
                               className="block text-gray-700 hover:text-teal-600 transition-colors duration-300"
                             >
-                              {destination}
+                              {name}
                             </a>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Europe Column */}
-                    <div>
-                      <h3 className="text-lg font-bold text-teal-700 mb-4">Europe</h3>
-                      <ul className="space-y-2">
-                        {destinations.Europe.map((destination) => (
-                          <li key={destination}>
-                            <a
-                              href="#"
-                              className="block text-gray-700 hover:text-teal-600 transition-colors duration-300"
-                            >
-                              {destination}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    
+                   
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {[ "Contact Us"].map((item) => (
+          {["Contact Us"].map((item) => (
             <motion.a
               key={item}
               href="#"
@@ -217,7 +202,6 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               {item}
-              {/* Underline effect on hover */}
               <span className="absolute left-0 bottom-0 h-0.5 bg-cyan-200 w-0 group-hover:w-full transition-all duration-300"></span>
             </motion.a>
           ))}

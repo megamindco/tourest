@@ -42,18 +42,18 @@ const Destination = () => {
   ];
 
   return (
-    <section className="section destination w-full md:px-25">
+    <section className="section destination w-full md:px-25 mt-5" id='destinations'>
       <div className="container mx-auto px-4">
         {/* Section Subtitle */}
         <p
-          style={{ fontFamily: 'Merienda, cursive' }}
-          className="section-subtitle font-comforter-brush text-[hsl(47,98%,50%)] text-3xl text-center mb-4"
+          style={{ fontFamily:'Great Vibes, cursive' }}
+          className="section-subtitle font-comforter-brush text-[hsl(47,98%,50%)] text-4xl text-center mb-4"
         >
           Destinations
         </p>
 
         {/* Section Title */}
-        <h2 className="h2 section-title font-abril-fatface text-[hsl(0,0%,20%)] text-4xl font-medium text-center mb-12">
+        <h2 className="h2 section-title font-abril-fatface text-[hsl(0,0%,20%)] text-3xl font-medium text-center mb-12">
           Choose Your Place
         </h2>
 
@@ -79,10 +79,13 @@ const Destination = () => {
                 </figure>
 
                 <div className="card-content absolute bottom-0 left-0 p-6">
-                  <p className="card-subtitle font-comforter-brush text-[hsl(47,98%,50%)] text-2xl">
+                  <p 
+                  style={{ fontFamily:'Great Vibes, cursive' }}
+                  className="card-subtitle text-[hsl(47,98%,50%)] text-2xl">
                     {destination.subtitle}
                   </p>
-                  <h3 className="h3 card-title font-abril-fatface text-[hsl(0,0%,100%)] text-3xl">
+                  <h3 
+                  className="h3 card-title font-abril-fatface text-[hsl(0,0%,100%)] text-3xl">
                     {destination.title}
                   </h3>
                 </div>
